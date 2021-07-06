@@ -13,7 +13,6 @@ class Detail extends StatelessWidget {
   // Navigator.pop(context)
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     print(id);
     return Scaffold(
       appBar: AppBar(

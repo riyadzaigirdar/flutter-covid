@@ -36,7 +36,9 @@ class DetailLowerContainer extends StatelessWidget{
             Container(
               height: size.height * 0.21,
               width: double.infinity,
-              child: SvgPicture.asset("assets/icons/map.svg")
+              child: SvgPicture.asset(
+                "assets/icons/map.svg",
+                )
             )
           ],
         ),
