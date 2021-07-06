@@ -7,6 +7,7 @@ class HomeMiddleContainer extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     Size screenSize = MediaQuery.of(context).size;
+
     return Container(
       padding: const EdgeInsets.only(left: 30, right: 30, top: 20.0),
       color: kBackgroundColor,
@@ -61,5 +62,6 @@ class HomeMiddleContainer extends StatelessWidget{
       ),
     );
   }
+  
 }
 

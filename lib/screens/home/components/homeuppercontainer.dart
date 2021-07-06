@@ -4,6 +4,11 @@ import '../../../constants.dart';
 import 'card.dart';
 
 class HomeUpperContainer extends StatelessWidget{
+  
+  void handleDetailView(BuildContext context){
+    Navigator.pushNamed(context, "/detail", arguments: {'id': 2});
+  }
+
   @override
   Widget build(BuildContext context){
     Size screenSize = MediaQuery.of(context).size;
@@ -18,8 +23,11 @@ class HomeUpperContainer extends StatelessWidget{
       height: screenSize.height * 0.34,
       child: Center(
         child: Wrap(
-          children: getHomeData.map((item) => (
-            GridCard(info: item)
+          children: getHomeData.map((item) => GestureDetector(
+            onTap: ()=>handleDetailView(context),
+            child: (
+              GridCard(info: item)
+            ),
           )).toList(),
         ),
       ),

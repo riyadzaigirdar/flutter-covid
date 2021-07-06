@@ -8,7 +8,7 @@ class HomeLowerContainer extends StatelessWidget{
   Widget build(BuildContext context){
     Size screenSize = MediaQuery.of(context).size;
     return Container(
-      color: Colors.transparent,
+      color: Colors.white,
       height: screenSize.height * 0.216,
       child: Stack(
         children: [

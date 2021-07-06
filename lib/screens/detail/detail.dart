@@ -1,16 +1,21 @@
-import 'package:covid/screens/home/components/homelowercontainer.dart';
-import 'package:covid/screens/home/components/homemiddlecontainer.dart';
+import 'package:covid/screens/detail/components/detaillowercontainer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import './components/homeuppercontainer.dart';
+import './components/detailuppercontainer.dart';
 import '../../constants.dart';
+import '../../main.dart';
 
-class Home extends StatelessWidget{
+class Detail extends StatelessWidget {
+  final int id;
 
+  Detail(this.id);
+
+  // Navigator.pop(context)
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    print(id);
     return Scaffold(
-      backgroundColor: kBackgroundColor,
       appBar: AppBar(
         toolbarHeight: 75.0,
         backgroundColor: kTextLightColor.withOpacity(0.1),
@@ -23,7 +28,9 @@ class Home extends StatelessWidget{
               icon: SvgPicture.asset("assets/icons/menu.svg"),
               iconSize: 40.0,
               color: kPrimaryColor,
-              onPressed: (){}
+              onPressed: (){
+                Navigator.pushReplacementNamed(context, HomeRoute);
+              }
             ),
             IconButton(
               icon: SvgPicture.asset("assets/icons/search.svg"),
@@ -33,15 +40,17 @@ class Home extends StatelessWidget{
               onPressed: (){}
             )
           ],
-          ),  
+          ),         
       ),
       body: Container(
-        color: kInactiveChartColor,
+        height: double.infinity,
+        width: double.infinity,
+        color: kTextLightColor.withOpacity(0.1),
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
-            HomeUpperContainer(),
-            HomeMiddleContainer(),
-            HomeLowerContainer()
+            DetailUpperContainer(),
+            DetailLowerContainer()
           ],
         ),
       ),
